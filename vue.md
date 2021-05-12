@@ -16,6 +16,9 @@ Q: vue虚拟DOM
 Q: vue diff算法
 
 Q: vue组件通信
+A: 父子组件通信-父到子是props，子到父是$emit
+	兄弟组件或跨级组件通信-使用空Vue实例作为中央事件总线(bus), bus.$on来监听, bus.$emit来通知
+	还可以通过父链$parent和子组件索引$refs
 
 Q: 跟jQuery相比，vue的优点是什么
 A: 双向数据绑定，开发者的编码量大大减小；组件化，提高协作效率，提升可维护性；虚拟DOM，减少不必要的DOM操作，提升性能。
