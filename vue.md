@@ -1,6 +1,3 @@
-Q: vue3.0有哪些改进
-A: 
-
 Q: vue的双向数据绑定如何实现
 A: 数据劫持+发布/订阅
 核心：vue2通过Object.defineProperty()来实现，vue3则用Proxy
@@ -30,3 +27,12 @@ A: SPA（single-page application）：只有一个主页面，加载完成后，
 
 Q: v-show和v-if的联系和区别
 A: 两者都用于控制元素是否显示。v-show表示显不显示，v-if表示渲不渲染。v-show不管条件是否成立，都会将相关元素渲染到页面的，它会根据条件来控制元素的display属性以实现显示和隐藏，而v-if控制的元素，在条件不成立的情况下，是不会渲染到页面的。v-show的切换开销小，v-if的初始化渲染开销小，所以，频繁切换的元素用v-show来控制，反之，用v-if。
+
+Q: vue3.0有哪些改进
+A: 
+- 更快: vue3.0使用Proxy劫持整个对象，相比之前通过Object.defineProperty来劫持对象的key，性能要提升不少; 编译阶段对静态模板分析生成block tree，将vnode更新性能由与模板整体大小相关提升为与动态内容的数量相关
+- 更小: 源码体积优化，移除一下冷门的feature，引入tree-shaking技术
+- 更易于维护: 使用monorepo和typescript管理和开发源码，提升框架源代码的可维护性
+- 更易于开发使用: 使用composition api，（取代原有的option api）将某个逻辑的关注点相关的代码都放到一个函数，优化逻辑复用，对tree-shaking友好，代码易于压缩
+- 
+	
